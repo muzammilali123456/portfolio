@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syed Muzammil Ali</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="fixed top-0 w-full z-50 glass py-3">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="font-poppins font-bold text-xl gradient-text">SMA</div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="text-light hover:text-purple-400 transition-colors">Home</a>
+                    <a href="#about" class="text-light hover:text-purple-400 transition-colors">About</a>
+                    <a href="#skills" class="text-light hover:text-purple-400 transition-colors">Skills</a>
+                    <a href="#projects" class="text-light hover:text-purple-400 transition-colors">Projects</a>
+                    <a href="#contact" class="text-light hover:text-purple-400 transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    <span class="text-white">Hi, I'm </span>
+                    <span class="gradient-text">Syed Muzammil Ali</span>
+                </h1>
+                
+                <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-light-gray mb-8 typewriter">
+                    A Passionate Full Stack Developer
+                </h2>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12">
+                    <button class="btn-glow px-8 py-4 rounded-full font-semibold text-lg btn-lg" onclick="scrollToSection('projects')">
+                        View My Work
+                    </button>
+                    <button class="btn-outline-glow px-8 py-4 rounded-full font-semibold text-lg btn-lg" onclick="downloadCV()">
+                        <i class="bi bi-download me-2"></i>Download CV
+                    </button>
+                </div>
+            </div>
+
+            <div class="scroll-indicator">
+                <div class="w-6 h-10 border-2 border-purple-400 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-purple-400 rounded-full mt-2 animate-bounce"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12" data-aos="fade-up">
+                    About <span class="gradient-text">Me</span>
+                </h2>
+                
+                <div class="glass rounded-3xl p-8 md:p-12" data-aos="fade-up" data-aos-delay="200">
+                    <p class="text-lg md:text-xl leading-relaxed mb-6">
+                        I'm a self-taught full stack developer with a passion for building creative, high-performance web applications. My expertise spans from designing beautiful interfaces to building secure, efficient backends. 
+                    </p>
+                    
+                    <p class="text-lg md:text-xl leading-relaxed">
+                        I'm always experimenting with new tools, optimizing workflows, and pushing my technical boundaries.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                        <div class="glass rounded-2xl p-6" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="text-3xl font-bold gradient-text mb-2">2+</div>
+                            <div class="text-light-gray">Years Experience</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="text-3xl font-bold gradient-text mb-2">10+</div>
+                            <div class="text-light-gray">Projects Completed</div>
+                        </div>
+                        <div class="glass rounded-2xl p-6" data-aos="zoom-in" data-aos-delay="500">
+                            <div class="text-3xl font-bold gradient-text mb-2">15+</div>
+                            <div class="text-light-gray">Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+                    My <span class="gradient-text">Skills</span>
+                </h2>
+                <p class="text-lg text-light-gray max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Technologies and tools I use to bring ideas to life
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🎨</div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Frontend</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">React</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Tailwind CSS</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">HTML</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">CSS</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Backend</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Node.js</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Express.js</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Python</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🗄️</div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Databases</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">PostgreSQL</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">MySQL</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">🔧</div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Tools</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Git</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">GitHub</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">VS Code</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="500">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">💻</div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Operating Systems</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Linux</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Windows</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">macOS</span>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center mb-6">
+                        <div class="text-4xl mb-4">📝</div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Languages</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">JavaScript</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Python</span>
+                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">C++</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+                    My <span class="gradient-text">Projects</span>
+                </h2>
+                <p class="text-lg text-light-gray max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                    Here are some of my recent works and ongoing projects
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass rounded-3xl overflow-hidden card-hover glow-border project-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-image h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                        <div class="text-6xl opacity-50">🎮</div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Completed</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-medium text-purple-400 uppercase tracking-wider mb-2">Game Development</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">🎮 Tic Tac Toe – The Ultimate Multiplayer Experience</h3>
+                        <p class="text-light-gray mb-4 leading-relaxed">An interactive, feature-rich game with animations and real-time win detection.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Html</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">JavaScript</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">CSS</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="btn-glow flex-1 py-2 px-4 rounded-lg font-medium text-sm" onclick="viewProject('Tic Tac Toe')">View Project</button>
+                            <button class="btn-outline-glow py-2 px-4 rounded-lg font-medium text-sm" onclick="viewCode()">Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover glow-border project-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-image h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <div class="text-6xl opacity-50">🍴</div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-xs font-semibold">Completed</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-medium text-purple-400 uppercase tracking-wider mb-2">Web Development</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">🍴 Food Website – 'Steakjees'</h3>
+                        <p class="text-light-gray mb-4 leading-relaxed">A responsive food website built with modern design and clean UI.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">React</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Tailwind CSS</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Responsive</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Html</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">CSS</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">js</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="btn-glow flex-1 py-2 px-4 rounded-lg font-medium text-sm" onclick="viewProject('Steakjees')">View Project</button>
+                            <button class="btn-outline-glow py-2 px-4 rounded-lg font-medium text-sm" onclick="viewCode()">Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass rounded-3xl overflow-hidden card-hover glow-border project-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="project-image h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                        <div class="text-6xl opacity-50">🛍️</div>
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-yellow-500 text-black px-3 py-1 rounded-full text-xs font-semibold">Completed</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-xs font-medium text-purple-400 uppercase tracking-wider mb-2">E-commerce</div>
+                        <h3 class="text-xl font-semibold text-white mb-3">🛍️ Clothing Website – 'Dzehra'</h3>
+                        <p class="text-light-gray mb-4 leading-relaxed">A responsive e-commerce website built with modern design and clean UI.</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Astra</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Wordpress</span>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <button class="btn-glow flex-1 py-2 px-4 rounded-lg font-medium text-sm" onclick="viewProject('Dzehra')">View Project</button>
+                            <button class="btn-outline-glow py-2 px-4 rounded-lg font-medium text-sm" onclick="viewCode()">Code</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="400">
+                <div class="glass rounded-3xl p-8 max-w-2xl mx-auto">
+                    <p class="text-light-gray text-lg mb-6">
+                        Want to see more of my work or discuss a project?
+                    </p>
+                    <button class="btn-glow px-8 py-4 rounded-full font-semibold" onclick="scrollToSection('contact')">
+                        Get In Touch
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">
+                        Get In <span class="gradient-text">Touch</span>
+                    </h2>
+                    <p class="text-lg text-light-gray max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        Let's discuss your next project or just say hello!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="glass rounded-3xl p-8" data-aos="fade-right">
+                        <h3 class="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 transition-all duration-300 cursor-pointer group" onclick="window.location.href='mailto:syedmuzammilali@example.com'">
+                                <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 transition-all duration-300">
+                                    <i class="bi bi-envelope text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-light-gray text-sm font-medium">Email</p>
+                                    <p class="text-white font-semibold"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb88829e9f968e819a969692979a9792bb9e839a968b979ed5989496">[syedmuzammilali624@gmail.com]</a></p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 transition-all duration-300 cursor-pointer group" onclick="window.location.href='tel:+15551234567'">
+                                <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 transition-all duration-300">
+                                    <i class="bi bi-telephone text-xl"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-light-gray text-sm font-medium">Phone</p>
+                                    <p class="text-white font-semibold">+92 3702440472</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-8">
+                        <div class="glass rounded-3xl p-8" data-aos="fade-left" data-aos-delay="200">
+                            <h3 class="text-2xl font-semibold text-white mb-6">Follow Me</h3>
+                            
+                            <div class="flex flex-col space-y-4">
+                                <a href="https://github.com/muzammilali123456" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 hover:bg-purple-500 hover:bg-opacity-10 transition-all duration-300 group">
+                                    <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 group-hover:scale-110 transition-all duration-300">
+                                        <i class="bi bi-github text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-white font-semibold">GitHub</p>
+                                        <p class="text-light-gray text-sm">@muzammilali123456</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://www.linkedin.com/in/syed-muzammil-alii/" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 hover:bg-purple-500 hover:bg-opacity-10 transition-all duration-300 group">
+                                    <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 group-hover:scale-110 transition-all duration-300">
+                                        <i class="bi bi-linkedin text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-white font-semibold">LinkedIn</p>
+                                        <p class="text-light-gray text-sm">Syed Muzammil Ali</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="https://www.instagram.com/muuuzammil/" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 hover:bg-purple-500 hover:bg-opacity-10 transition-all duration-300 group">
+                                    <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 group-hover:scale-110 transition-all duration-300">
+                                        <i class="bi bi-instagram text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-white font-semibold">Instagram</p>
+                                        <p class="text-light-gray text-sm">@muuuzammil</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass rounded-3xl p-8" data-aos="fade-left" data-aos-delay="400">
+                            <h3 class="text-xl font-semibold text-white mb-4">Quick Message</h3>
+                            <p class="text-light-gray mb-4">
+                                I'm always interested in new opportunities and exciting projects. Feel free to reach out!
+                            </p>
+                            <button class="btn-glow w-full py-3 rounded-lg font-semibold" onclick="sendMessage()">
+                                Send Message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-purple-500 border-opacity-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <div class="glass rounded-3xl p-8 max-w-2xl mx-auto mb-8">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="gradient-text">Syed Muzammil Ali</span>
+                    </h3>
+                    <p class="text-light-gray mb-6">
+                        Full Stack Developer passionate about creating beautiful, functional, and scalable web applications.
+                    </p>
+                    
+                    <div class="flex justify-center space-x-6 mb-6">
+                        <a href="#about" class="text-purple-400 hover:text-purple-300 transition-colors">About</a>
+                        <a href="#skills" class="text-purple-400 hover:text-purple-300 transition-colors">Skills</a>
+                        <a href="#projects" class="text-purple-400 hover:text-purple-300 transition-colors">Projects</a>
+                        <a href="#contact" class="text-purple-400 hover:text-purple-300 transition-colors">Contact</a>
+                    </div>
+
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://github.com/muzammilali123456" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 hover:bg-opacity-30 transition-all duration-300 hover:scale-110">
+                            <i class="bi bi-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/syed-muzammil-alii/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 hover:bg-opacity-30 transition-all duration-300 hover:scale-110">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/muuuzammil/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 hover:bg-opacity-30 transition-all duration-300 hover:scale-110">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="pt-8 border-t border-purple-500 border-opacity-20">
+                    <p class="text-light-gray text-sm">
+                        © 2025 Syed Muzammil Ali — All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
