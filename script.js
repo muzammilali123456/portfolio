@@ -17,13 +17,13 @@ function updateClock() {
     minutes = minutes.toString().padStart(2, '0');
     seconds = seconds.toString().padStart(2, '0');
     
-    // Update time display
-    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+    // Update header clock display
+    document.getElementById('header-clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
     
-    // Date formatting
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    // Date formatting for header
+    const options = { weekday: 'short', month: 'short', day: 'numeric' };
     const dateString = now.toLocaleDateString('en-US', options);
-    document.getElementById('date').textContent = dateString;
+    document.getElementById('header-date').textContent = dateString;
 }
 
 // Initialize clock and update every second
@@ -32,23 +32,30 @@ setInterval(updateClock, 1000);
 
 // Mobile Menu Functionality
 function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNav.classList.toggle('hidden');
 }
 
 function closeMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.add('hidden');
+    const mobileNav = document.getElementById('mobile-nav');
+    mobileNav.classList.add('hidden');
 }
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobile-menu');
+// Event Listeners
+document.addEventListener('DOMContentLoaded', function() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     
-    if (!mobileMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
-        mobileMenu.classList.add('hidden');
-    }
+    hamburgerBtn.addEventListener('click', toggleMobileMenu);
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const mobileNav = document.getElementById('mobile-nav');
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        
+        if (!mobileNav.contains(event.target) && !hamburgerBtn.contains(event.target) && !mobileNav.classList.contains('hidden')) {
+            closeMobileMenu();
+        }
+    });
 });
 
 // AOS Initialization
@@ -163,8 +170,10 @@ window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
         header.classList.add('backdrop-blur-lg');
+        header.style.background = 'rgba(13, 13, 13, 0.9)';
     } else {
         header.classList.remove('backdrop-blur-lg');
+        header.style.background = 'var(--glass-bg)';
     }
 });
 
