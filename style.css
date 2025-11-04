@@ -24,6 +24,59 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Digital Clock Styles */
+.digital-clock-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+    padding: 10px 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(108, 99, 255, 0.3);
+}
+
+.digital-clock {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #6C63FF;
+    text-shadow: 0 0 10px rgba(108, 99, 255, 0.7);
+    letter-spacing: 2px;
+}
+
+.digital-clock .date {
+    font-size: 0.9rem;
+    color: #E0E0E0;
+    margin-top: 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Adjust header position to account for clock */
+header {
+    top: 60px; /* Height of the clock container */
+}
+
+/* Mobile Menu Styles */
+#mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
+
+#mobile-menu.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+#mobile-menu:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rest of your existing CSS */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -154,6 +207,11 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(108, 99, 255, 0.3);
     color: var(--light-gray);
     transition: all 0.3s ease;
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin: 2px;
+    font-size: 0.875rem;
 }
 
 .skill-tag:hover {
@@ -215,5 +273,17 @@ h1, h2, h3, h4, h5, h6 {
     
     .card-hover {
         margin-bottom: 1.5rem;
+    }
+    
+    .digital-clock {
+        font-size: 1.2rem;
+    }
+    
+    .digital-clock .date {
+        font-size: 0.8rem;
+    }
+    
+    header {
+        top: 50px;
     }
 }

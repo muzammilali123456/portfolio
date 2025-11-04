@@ -12,22 +12,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Digital Clock -->
+    <div class="digital-clock-container">
+        <div class="digital-clock" id="clock">00:00:00</div>
+        <div class="date" id="date">Monday, January 1, 2023</div>
+    </div>
+    
     <canvas id="particles-canvas"></canvas>
 
-    <nav class="fixed top-0 w-full z-50 glass py-3">
+    <!-- Header with Hamburger Menu -->
+    <header class="fixed top-0 w-full z-50 glass py-3">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
                 <div class="font-poppins font-bold text-xl gradient-text">SMA</div>
-                <div class="hidden md:flex space-x-6">
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
                     <a href="#home" class="text-light hover:text-purple-400 transition-colors">Home</a>
                     <a href="#about" class="text-light hover:text-purple-400 transition-colors">About</a>
                     <a href="#skills" class="text-light hover:text-purple-400 transition-colors">Skills</a>
                     <a href="#projects" class="text-light hover:text-purple-400 transition-colors">Projects</a>
                     <a href="#contact" class="text-light hover:text-purple-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Hamburger Menu for Mobile -->
+                <button class="md:hidden text-purple-400 text-2xl" id="hamburger-btn">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden glass rounded-lg mt-4 p-4" id="mobile-menu">
+                <div class="flex flex-col space-y-3">
+                    <a href="#home" class="text-light hover:text-purple-400 transition-colors py-2" onclick="closeMobileMenu()">Home</a>
+                    <a href="#about" class="text-light hover:text-purple-400 transition-colors py-2" onclick="closeMobileMenu()">About</a>
+                    <a href="#skills" class="text-light hover:text-purple-400 transition-colors py-2" onclick="closeMobileMenu()">Skills</a>
+                    <a href="#projects" class="text-light hover:text-purple-400 transition-colors py-2" onclick="closeMobileMenu()">Projects</a>
+                    <a href="#contact" class="text-light hover:text-purple-400 transition-colors py-2" onclick="closeMobileMenu()">Contact</a>
                 </div>
             </div>
         </div>
-    </nav>
+    </header>
 
     <section id="home" class="min-h-screen flex items-center justify-center relative">
         <div class="container mx-auto px-4 text-center">
@@ -112,11 +137,11 @@
                         <h3 class="text-2xl font-semibold text-white mb-4">Frontend</h3>
                     </div>
                     <div class="space-y-3">
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">React</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Tailwind CSS</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">HTML</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">CSS</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
                     </div>
                 </div>
 
@@ -126,10 +151,10 @@
                         <h3 class="text-2xl font-semibold text-white mb-4">Backend</h3>
                     </div>
                     <div class="space-y-3">
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Node.js</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Express.js</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Python</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">JavaScript</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
                     </div>
                 </div>
 
@@ -139,9 +164,9 @@
                         <h3 class="text-2xl font-semibold text-white mb-4">Databases</h3>
                     </div>
                     <div class="space-y-3">
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">PostgreSQL</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">MySQL</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">MongoDB</span>
                     </div>
                 </div>
 
@@ -151,9 +176,9 @@
                         <h3 class="text-2xl font-semibold text-white mb-4">Tools</h3>
                     </div>
                     <div class="space-y-3">
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Git</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">GitHub</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">VS Code</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">VS Code</span>
                     </div>
                 </div>
 
@@ -163,9 +188,9 @@
                         <h3 class="text-2xl font-semibold text-white mb-4">Operating Systems</h3>
                     </div>
                     <div class="space-y-3">
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Linux</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Windows</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">macOS</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Windows</span>
+                        <span class="skill-tag">macOS</span>
                     </div>
                 </div>
 
@@ -175,9 +200,9 @@
                         <h3 class="text-2xl font-semibold text-white mb-4">Languages</h3>
                     </div>
                     <div class="space-y-3">
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">JavaScript</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">Python</span>
-                        <span class="skill-tag inline-block px-4 py-2 rounded-full text-sm mr-2 mb-2">C++</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
                     </div>
                 </div>
             </div>
@@ -209,9 +234,9 @@
                         <p class="text-light-gray mb-4 leading-relaxed">An interactive, feature-rich game with animations and real-time win detection.</p>
                         
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Html</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">JavaScript</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">CSS</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">CSS</span>
                         </div>
                         
                         <div class="flex gap-3">
@@ -234,12 +259,12 @@
                         <p class="text-light-gray mb-4 leading-relaxed">A responsive food website built with modern design and clean UI.</p>
                         
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">React</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Tailwind CSS</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Responsive</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Html</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">CSS</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">js</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                            <span class="skill-tag">Responsive</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
                         </div>
                         
                         <div class="flex gap-3">
@@ -262,9 +287,9 @@
                         <p class="text-light-gray mb-4 leading-relaxed">A responsive e-commerce website built with modern design and clean UI.</p>
                         
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Astra</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Figma</span>
-                            <span class="skill-tag px-3 py-1 rounded-full text-xs">Wordpress</span>
+                            <span class="skill-tag">Astra</span>
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Wordpress</span>
                         </div>
                         
                         <div class="flex gap-3">
@@ -305,17 +330,17 @@
                         <h3 class="text-2xl font-semibold text-white mb-6">Let's Connect</h3>
                         
                         <div class="space-y-6">
-                            <div class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 transition-all duration-300 cursor-pointer group" onclick="window.location.href='mailto:syedmuzammilali@example.com'">
+                            <div class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 transition-all duration-300 cursor-pointer group" onclick="window.location.href='mailto:syedmuzammilali624@gmail.com'">
                                 <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 transition-all duration-300">
                                     <i class="bi bi-envelope text-xl"></i>
                                 </div>
                                 <div class="ml-4">
                                     <p class="text-light-gray text-sm font-medium">Email</p>
-                                    <p class="text-white font-semibold"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fb88829e9f968e819a969692979a9792bb9e839a968b979ed5989496">[syedmuzammilali624@gmail.com]</a></p>
+                                    <p class="text-white font-semibold">syedmuzammilali624@gmail.com</p>
                                 </div>
                             </div>
                             
-                            <div class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 transition-all duration-300 cursor-pointer group" onclick="window.location.href='tel:+15551234567'">
+                            <div class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 transition-all duration-300 cursor-pointer group" onclick="window.location.href='tel:+923702440472'">
                                 <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 transition-all duration-300">
                                     <i class="bi bi-telephone text-xl"></i>
                                 </div>
@@ -419,7 +444,6 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>

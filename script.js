@@ -1,3 +1,57 @@
+// Digital Clock Functionality
+function updateClock() {
+    const now = new Date();
+    
+    // Time formatting
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    // Convert to 12-hour format
+    hours = hours % 12;
+    hours = hours ? hours : 12; // 0 should be 12
+    
+    // Add leading zeros
+    hours = hours.toString().padStart(2, '0');
+    minutes = minutes.toString().padStart(2, '0');
+    seconds = seconds.toString().padStart(2, '0');
+    
+    // Update time display
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
+    
+    // Date formatting
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('en-US', options);
+    document.getElementById('date').textContent = dateString;
+}
+
+// Initialize clock and update every second
+updateClock();
+setInterval(updateClock, 1000);
+
+// Mobile Menu Functionality
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.add('hidden');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    
+    if (!mobileMenu.contains(event.target) && !hamburgerBtn.contains(event.target)) {
+        mobileMenu.classList.add('hidden');
+    }
+});
+
+// AOS Initialization
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
@@ -5,6 +59,7 @@ AOS.init({
     mirror: false
 });
 
+// Particles Animation
 const canvas = document.getElementById('particles-canvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -77,10 +132,12 @@ function animateParticles() {
 initParticles();
 animateParticles();
 
+// Navigation Functions
 function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
         behavior: 'smooth'
     });
+    closeMobileMenu();
 }
 
 function downloadCV() {
@@ -88,34 +145,31 @@ function downloadCV() {
 }
 
 function viewProject(projectName) {
-    alert(`Project link placeholder for: ${projectName}\\nPlease replace with actual project URL.`);
+    alert(`Project link placeholder for: ${projectName}\nPlease replace with actual project URL.`);
 }
 
 function viewCode() {
-    alert('Code repository link placeholder.\\nPlease replace with actual GitHub URL.');
+    alert('Code repository link placeholder.\nPlease replace with actual GitHub URL.');
 }
 
 function sendMessage() {
     const subject = encodeURIComponent('Project Discussion');
-    const body = encodeURIComponent('Hi Syed Muzammil Ali,\\n\\nI would like to discuss a project with you.\\n\\nBest regards');
-    window.location.href = `mailto:syedmuzammilali@example.com?subject=${subject}&body=${body}`;
+    const body = encodeURIComponent('Hi Syed Muzammil Ali,\n\nI would like to discuss a project with you.\n\nBest regards');
+    window.location.href = `mailto:syedmuzammilali624@gmail.com?subject=${subject}&body=${body}`;
 }
 
+// Scroll effect for header
 window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('nav');
+    const header = document.querySelector('header');
     if (window.scrollY > 50) {
-        navbar.classList.add('backdrop-blur-lg');
+        header.classList.add('backdrop-blur-lg');
     } else {
-        navbar.classList.remove('backdrop-blur-lg');
+        header.classList.remove('backdrop-blur-lg');
     }
 });
 
-function toggleMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
-}
-
-const typewriterText = "— A Passionate Full Stack Developer";
+// Typewriter effect
+const typewriterText = "A Passionate Full Stack Developer";
 const typewriterElement = document.querySelector('.typewriter');
 
 function typeWriter(element, text, i = 0) {
