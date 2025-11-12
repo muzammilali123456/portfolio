@@ -275,7 +275,7 @@ header {
     width: 80%;
 }
 
-/* Mobile Navigation */
+
 .mobile-nav {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
@@ -303,7 +303,6 @@ header {
     transform: translateX(5px);
 }
 
-/* Hamburger Button */
 .hamburger-btn {
     transition: all 0.3s ease;
     padding: 8px;
@@ -318,7 +317,7 @@ header {
     box-shadow: 0 0 15px rgba(108, 99, 255, 0.4);
 }
 
-/* Rest of your existing CSS */
+
 ::-webkit-scrollbar {
     width: 8px;
 }
