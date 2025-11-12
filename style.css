@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Dragon Canvas */
+
 #dragon-canvas {
     position: fixed;
     top: 0;
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
     pointer-events: none;
 }
 
-/* Custom Cursor */
+
 .cursor {
     width: 20px;
     height: 20px;
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 20px #ff6b6b;
 }
 
-/* Solar System Styles */
+
 .solar-system {
     position: absolute;
     width: 100%;
@@ -209,7 +209,6 @@ h1, h2, h3, h4, h5, h6 {
     .saturn::before { width: 35px; height: 35px; border-width: 2px; }
 }
 
-/* Header Clock Styles */
 .header-clock {
     display: flex;
     flex-direction: column;
@@ -233,13 +232,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
-/* Header Styles */
+
 header {
     top: 0;
     transition: all 0.3s ease;
 }
 
-/* Navigation Styles */
 .desktop-nav {
     display: flex;
     align-items: center;
