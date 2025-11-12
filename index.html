@@ -13,18 +13,18 @@
 </head>
 <body>
     <canvas id="particles-canvas"></canvas>
+    <canvas id="dragon-canvas"></canvas>
+    <div class="cursor"></div>
 
-    <!-- Header with Digital Clock and Navigation Menu -->
     <header class="fixed top-0 w-full z-50 glass py-3">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-                <!-- Digital Clock in Logo Area -->
+
                 <div class="header-clock">
                     <div class="digital-clock" id="header-clock">00:00:00</div>
                     <div class="date" id="header-date">Mon, Jan 1</div>
                 </div>
-                
-                <!-- Desktop Navigation Menu -->
+
                 <nav class="hidden md:flex space-x-6 desktop-nav">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#about" class="nav-link">About</a>
@@ -33,13 +33,12 @@
                     <a href="#contact" class="nav-link">Contact</a>
                 </nav>
 
-                <!-- Hamburger Menu Button for Mobile -->
                 <button class="md:hidden text-purple-400 text-2xl hamburger-btn" id="hamburger-btn">
                     <i class="bi bi-list"></i>
                 </button>
             </div>
 
-            <!-- Mobile Navigation Menu -->
+           
             <div class="md:hidden mobile-nav hidden" id="mobile-nav">
                 <div class="flex flex-col space-y-4 py-4">
                     <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu()">
@@ -62,8 +61,50 @@
         </div>
     </header>
 
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
-        <div class="container mx-auto px-4 text-center">
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
+        <!-- Solar System Background -->
+        <div class="solar-system">
+            <div class="stars" id="stars"></div>
+            
+            <div class="sun-container">
+                <div class="sun"></div>
+            </div>
+
+            <div class="orbit mercury-orbit">
+                <div class="planet mercury"></div>
+            </div>
+
+            <div class="orbit venus-orbit">
+                <div class="planet venus"></div>
+            </div>
+
+            <div class="orbit earth-orbit">
+                <div class="planet earth"></div>
+            </div>
+
+            <div class="orbit mars-orbit">
+                <div class="planet mars"></div>
+            </div>
+
+            <div class="orbit jupiter-orbit">
+                <div class="planet jupiter"></div>
+            </div>
+
+            <div class="orbit saturn-orbit">
+                <div class="planet saturn"></div>
+            </div>
+
+            <div class="orbit uranus-orbit">
+                <div class="planet uranus"></div>
+            </div>
+
+            <div class="orbit neptune-orbit">
+                <div class="planet neptune"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-4 text-center relative z-10">
             <div class="max-w-4xl mx-auto" data-aos="fade-up">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                     <span class="text-white">Hi, I'm </span>
@@ -211,8 +252,10 @@
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">C++</span>
+                    </div>
+                </div>
 
-                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="600">
+                <div class="glass rounded-3xl p-8 card-hover glow-border" data-aos="fade-up" data-aos-delay="700">
                     <div class="text-center mb-6">
                         <div class="text-4xl mb-4">📝</div>
                         <h3 class="text-2xl font-semibold text-white mb-4">libraries</h3>
@@ -383,6 +426,16 @@
                                     <div class="ml-4">
                                         <p class="text-white font-semibold">GitHub</p>
                                         <p class="text-light-gray text-sm">@muzammilali123456</p>
+                                    </div>
+                                </a>
+
+                                <a href="https://wa.me/923702440472?text=السلام عليكم" target="_blank" rel="noopener noreferrer" class="flex items-center p-4 rounded-xl border border-purple-500 border-opacity-20 hover:border-opacity-60 hover:bg-purple-500 hover:bg-opacity-10 transition-all duration-300 group">
+                                    <div class="w-12 h-12 bg-purple-500 bg-opacity-20 rounded-lg flex items-center justify-center text-purple-400 group-hover:bg-opacity-30 group-hover:scale-110 transition-all duration-300">
+                                        <i class="bi bi-whatsapp text-xl"></i>
+                                    </div>
+                                    <div class="ml-4">
+                                        <p class="text-white font-semibold">whatsapp</p>
+                                        <p class="text-light-gray text-sm">+92 37024404172</p>
                                     </div>
                                 </a>
                                 
