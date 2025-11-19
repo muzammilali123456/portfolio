@@ -196,10 +196,6 @@ window.addEventListener('load', function() {
     }, 2000);
 });
 
-window.addEventListener('load', function() {
-    document.body.classList.add('loaded');
-});
-
 // Dragon Cursor Follower
 const dragonCanvas = document.getElementById('dragon-canvas');
 const dragonCtx = dragonCanvas.getContext('2d');
@@ -444,24 +440,3 @@ function animateDragon() {
 }
 
 animateDragon();
-
-// Solar System Stars
-document.addEventListener('DOMContentLoaded', function() {
-    const starsContainer = document.getElementById('stars');
-    const starCount = 200;
-
-    for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = 'star';
-        
-        const size = Math.random() * 2 + 0.5;
-        star.style.width = size + 'px';
-        star.style.height = size + 'px';
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 3 + 's';
-        star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-        
-        starsContainer.appendChild(star);
-    }
-});
