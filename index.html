@@ -19,7 +19,6 @@
     <header class="fixed top-0 w-full z-50 glass py-3">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center">
-
                 <div class="header-clock">
                     <div class="digital-clock" id="header-clock">00:00:00</div>
                     <div class="date" id="header-date">Mon, Jan 1</div>
@@ -38,7 +37,6 @@
                 </button>
             </div>
 
-           
             <div class="md:hidden mobile-nav hidden" id="mobile-nav">
                 <div class="flex flex-col space-y-4 py-4">
                     <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu()">
@@ -62,19 +60,14 @@
     </header>
 
     <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 overflow-hidden">
-        <!-- Professional Ambient Background -->
+        <div class="galaxy-bg"></div>
+        
         <div class="ambient-bg">
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
             <div class="gradient-orb orb-3"></div>
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-            </div>
         </div>
 
-        <!-- Content -->
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="max-w-4xl mx-auto" data-aos="fade-up">
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -369,7 +362,7 @@
                                 </div>
                                 <div class="ml-4">
                                     <p class="text-light-gray text-sm font-medium">Email</p>
-                                    <p class="text-white font-semibold">syedmuzammilali624@gmail.com</p>
+                                    <p class="text-white font-semibold"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="43303a26272e3639222e2e2a2f222f2a75717703242e222a2f6d202c2e">[email&#160;protected]</a></p>
                                 </div>
                             </div>
                             
@@ -487,8 +480,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

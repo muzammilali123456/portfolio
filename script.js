@@ -1,36 +1,28 @@
-// Digital Clock Functionality
 function updateClock() {
     const now = new Date();
     
-    // Time formatting
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
     const ampm = hours >= 12 ? 'PM' : 'AM';
     
-    // Convert to 12-hour format
     hours = hours % 12;
-    hours = hours ? hours : 12; // 0 should be 12
+    hours = hours ? hours : 12;
     
-    // Add leading zeros
     hours = hours.toString().padStart(2, '0');
     minutes = minutes.toString().padStart(2, '0');
     seconds = seconds.toString().padStart(2, '0');
     
-    // Update header clock display
     document.getElementById('header-clock').textContent = `${hours}:${minutes}:${seconds} ${ampm}`;
     
-    // Date formatting for header
     const options = { weekday: 'short', month: 'short', day: 'numeric' };
     const dateString = now.toLocaleDateString('en-US', options);
     document.getElementById('header-date').textContent = dateString;
 }
 
-// Initialize clock and update every second
 updateClock();
 setInterval(updateClock, 1000);
 
-// Mobile Menu Functionality
 function toggleMobileMenu() {
     const mobileNav = document.getElementById('mobile-nav');
     mobileNav.classList.toggle('hidden');
@@ -41,13 +33,11 @@ function closeMobileMenu() {
     mobileNav.classList.add('hidden');
 }
 
-// Event Listeners
 document.addEventListener('DOMContentLoaded', function() {
     const hamburgerBtn = document.getElementById('hamburger-btn');
     
     hamburgerBtn.addEventListener('click', toggleMobileMenu);
     
-    // Close mobile menu when clicking outside
     document.addEventListener('click', function(event) {
         const mobileNav = document.getElementById('mobile-nav');
         const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -58,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// AOS Initialization
 AOS.init({
     duration: 800,
     easing: 'ease-in-out',
@@ -66,7 +55,6 @@ AOS.init({
     mirror: false
 });
 
-// Particles Animation
 const canvas = document.getElementById('particles-canvas');
 const ctx = canvas.getContext('2d');
 let particles = [];
@@ -139,7 +127,6 @@ function animateParticles() {
 initParticles();
 animateParticles();
 
-// Navigation Functions
 function scrollToSection(sectionId) {
     document.getElementById(sectionId).scrollIntoView({
         behavior: 'smooth'
@@ -148,7 +135,141 @@ function scrollToSection(sectionId) {
 }
 
 function downloadCV() {
-    alert('Please replace this with your actual CV file path');
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    
+    doc.setProperties({
+        title: 'Syed Muzammil Ali - CV',
+        subject: 'Curriculum Vitae',
+        author: 'Syed Muzammil Ali',
+        keywords: 'CV, Resume, Full Stack Developer',
+        creator: 'Syed Muzammil Ali Portfolio'
+    });
+    
+    doc.setFontSize(22);
+    doc.setTextColor(108, 99, 255);
+    doc.text('SYED MUZAMMIL ALI', 20, 30);
+    
+    doc.setFontSize(12);
+    doc.setTextColor(0, 0, 0);
+    doc.text('Full Stack Developer', 20, 40);
+    doc.text('Phone: 03702440472 | Email: syedmuzammilail624@gmail.com', 20, 50);
+    doc.text('GitHub: https://github.com/muzammilail123456', 20, 60);
+    
+    doc.setFontSize(16);
+    doc.setTextColor(108, 99, 255);
+    doc.text('ABOUT ME', 20, 80);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    const aboutText = "Motivated and curious AI driven web developer and digital creator eager to join GNV.AI as a Vibe Coding Intern. Passionate about blending creativity, technology, and AI-assisted workflows to build modern digital solutions. Looking to grow through hands-on collaboration, real world projects, and community innovation.";
+    doc.text(aboutText, 20, 90, { maxWidth: 170 });
+    
+    doc.setFontSize(16);
+    doc.setTextColor(108, 99, 255);
+    doc.text('SKILLS', 20, 130);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    doc.text('• Web Development: HTML5, CSS3, Tailwind CSS, React, Node.js', 20, 140);
+    doc.text('• Programming Languages: Python, JavaScript, C++', 20, 147);
+    doc.text('• Databases: MySQL, SQL (Queries, Data Structuring, Optimization)', 20, 154);
+    doc.text('• Cloud Technologies: Basic knowledge of cloud hosting, deployment, and database integration', 20, 161);
+    doc.text('• AI & Automation: Familiar with AI tools, workflow automation, and prompt based development', 20, 168);
+    doc.text('• CMS & Design: WordPress (Astra Theme Customization), Canva, Adobe Illustrator and Figma', 20, 175);
+    doc.text('• Version Control: Git, GitHub', 20, 182);
+    doc.text('• Productivity Tools: Microsoft Office, Meta Business Suite', 20, 189);
+    
+    doc.setFontSize(16);
+    doc.setTextColor(108, 99, 255);
+    doc.text('CERTIFICATES', 20, 210);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    doc.text('• Web Development - Saylani Mass IT Training', 20, 220);
+    doc.text('• Web Scraping in Python - Udemy (Frank Andrade)', 20, 227);
+    
+    doc.addPage();
+    doc.setFontSize(16);
+    doc.setTextColor(108, 99, 255);
+    doc.text('PROJECTS / EXPERIENCE', 20, 30);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    
+    const projects = [
+        {
+            title: "Freelance Digital Marketer & Web Developer",
+            description: "Developed and customized multiple WordPress websites for clothing brands, coaching institutes, and schools. Managed social media marketing campaigns for schools and clothing brands, improving brand visibility and engagement. Designed prototypes for educational websites using HTML, CSS, and JavaScript. Created marketing strategies, posts, and ad designs for Facebook & Instagram. Worked with clients like Sage School, Dzehra Clothing Brand, and ATS Group (Water Filtration Company). Conducted a WordPress training session for students, teaching website setup, theme customization, and basic development tools."
+        },
+        {
+            title: "Web Scraping Intern - Swiss Tech Company",
+            description: "Scraped multiple e-commerce websites using Python, Scrapy & Selenium. Ensured structured, clean, and accurate datasets for analysis. Collaborated remotely with team members to meet project deadlines."
+        },
+        {
+            title: "School Website Prototype",
+            description: "Designed and developed a functional website prototype for a school using HTML, CSS, and JavaScript, focusing on responsive design and easy navigation."
+        },
+        {
+            title: "Coaching Institute Website and SMM",
+            description: "Built a customized website for a coaching institute to showcase services, courses, and admission details with a modern UI/UX and also managed their social media."
+        },
+        {
+            title: "Sage School",
+            description: "Managed and executed Facebook and Instagram marketing campaigns for Sage School, including content creation, ad design, and audience targeting to boost engagement."
+        },
+        {
+            title: "Dzehra Clothing Brand Website",
+            description: "Developed a e-commerce website using HTML CSS JS REACT TALWAND SQL NODE.JS for Dzehra Clothing Brand and handled social media marketing, increasing brand visibility and customer engagement."
+        },
+        {
+            title: "ATS Group",
+            description: "Worked on brand development (using wordpress) and digital marketing strategies for ATS Group, a water filtration company, including creative content design and awareness campaigns."
+        },
+        {
+            title: "Jarvis AI Virtual Assistant",
+            description: "Developed a personal AI based assistant (Jarvis) using Python that can perform multiple automated tasks such as opening applications, browsing the internet, fetching information, sending emails, and responding to voice commands. The project showcases integration of speech recognition, text-to-speech, and automation libraries, reflecting strong problem-solving and programming skills."
+        },
+        {
+            title: "Automated Web Interaction & Data Extraction System",
+            description: "Selenium, Python, PostgreSQL Automated login, navigation, and form handling on JS-heavy sites using Selenium WebDriver. Extracted structured data with advanced wait strategies and stored in PostgreSQL. Implemented logging for resilient, hands-free scraping workflows."
+        },
+        {
+            title: "End Cloud Data Pipeline (Batch ETL)",
+            description: "Python, AWS S3, Snowflake, Apache Airflow Built a cloud-based ETL pipeline that extracts crypto data from CoinGecko API, transforms it using Python, and stores raw & cleaned data in AWS S3. Automated data ingestion into Snowflake with Apache Airflow on AWS EC2 for scheduling and orchestration. Designed Airflow DAGs ensuring reliable, production-grade data workflows."
+        }
+    ];
+    
+    let yPosition = 40;
+    projects.forEach(project => {
+        doc.setFontSize(11);
+        doc.setTextColor(108, 99, 255);
+        doc.text(project.title, 20, yPosition);
+        
+        doc.setFontSize(9);
+        doc.setTextColor(0, 0, 0);
+        const lines = doc.splitTextToSize(project.description, 170);
+        doc.text(lines, 20, yPosition + 7);
+        
+        yPosition += 7 + (lines.length * 5) + 5;
+        
+        if (yPosition > 270) {
+            doc.addPage();
+            yPosition = 30;
+        }
+    });
+    
+    doc.addPage();
+    doc.setFontSize(16);
+    doc.setTextColor(108, 99, 255);
+    doc.text('EDUCATION', 20, 30);
+    
+    doc.setFontSize(10);
+    doc.setTextColor(0, 0, 0);
+    doc.text('• GBSS mailr Kalaboard - Matriculation computer science (Completed)', 20, 40);
+    doc.text('• Govt S.M College - Intermediate in computer science (In Progress)', 20, 47);
+    
+    doc.save('Syed_Muzammil_Ali_CV.pdf');
 }
 
 function viewProject(projectName) {
@@ -165,7 +286,6 @@ function sendMessage() {
     window.location.href = `mailto:syedmuzammilali624@gmail.com?subject=${subject}&body=${body}`;
 }
 
-// Scroll effect for header
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -177,7 +297,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Typewriter effect
 const typewriterText = "A Passionate Full Stack Developer";
 const typewriterElement = document.querySelector('.typewriter');
 
@@ -196,7 +315,6 @@ window.addEventListener('load', function() {
     }, 2000);
 });
 
-// Dragon Cursor Follower
 const dragonCanvas = document.getElementById('dragon-canvas');
 const dragonCtx = dragonCanvas.getContext('2d');
 const cursor = document.querySelector('.cursor');
