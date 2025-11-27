@@ -18,7 +18,6 @@ body {
     color: var(--light-gray);
     overflow-x: hidden;
     scroll-behavior: smooth;
-    cursor: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -32,14 +31,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(76, 29, 149, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(108, 99, 255, 0.3) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-        radial-gradient(circle at 60% 20%, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 10% 90%, rgba(255, 140, 0, 0.1) 0%, transparent 40%),
-        linear-gradient(135deg, #0D0D0D 0%, #1a0d2e 30%, #2D1B69 50%, #0D0D0D 70%, #000000 100%);
+        radial-gradient(circle at 20% 30%, rgba(76, 29, 149, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(108, 99, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, #0D0D0D 0%, #1a0d2e 50%, #0D0D0D 100%);
     z-index: -1;
-    animation: galaxyGlow 20s ease-in-out infinite;
 }
 
 .galaxy-bg::before {
@@ -50,62 +46,17 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background-image: 
-        radial-gradient(white, rgba(255,255,255,.3) 2px, transparent 4px),
-        radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 3px),
-        radial-gradient(white, rgba(255,255,255,.15) 2px, transparent 4px),
-        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,.4), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,.3), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,.5), transparent),
-        radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,.3), transparent),
-        radial-gradient(2px 2px at 160px 30px, rgba(255,255,255,.4), transparent);
-    background-size: 550px 550px, 350px 350px, 250px 250px, 200px 200px, 300px 300px, 180px 180px, 250px 250px, 220px 220px;
-    background-position: 0 0, 40px 60px, 130px 270px, 50px 100px, 120px 200px, 80px 150px, 180px 120px, 200px 180px;
-    animation: twinkle 8s ease-in-out infinite alternate, starMove 100s linear infinite;
-}
-
-.galaxy-bg::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.1) 70%);
-    z-index: 1;
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 4px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 4px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    animation: twinkle 8s ease-in-out infinite alternate;
 }
 
 @keyframes twinkle {
-    0% { opacity: 0.4; }
-    100% { opacity: 0.9; }
-}
-
-@keyframes starMove {
-    0% { transform: translateX(0) translateY(0); }
-    25% { transform: translateX(-10px) translateY(-5px); }
-    50% { transform: translateX(5px) translateY(-10px); }
-    75% { transform: translateX(-5px) translateY(5px); }
-    100% { transform: translateX(0) translateY(0); }
-}
-
-@keyframes galaxyGlow {
-    0%, 100% {
-        background: 
-            radial-gradient(circle at 20% 30%, rgba(76, 29, 149, 0.4) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(108, 99, 255, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 60% 20%, rgba(255, 20, 147, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 10% 90%, rgba(255, 140, 0, 0.1) 0%, transparent 40%),
-            linear-gradient(135deg, #0D0D0D 0%, #1a0d2e 30%, #2D1B69 50%, #0D0D0D 70%, #000000 100%);
-    }
-    50% {
-        background: 
-            radial-gradient(circle at 20% 30%, rgba(76, 29, 149, 0.5) 0%, transparent 50%),
-            radial-gradient(circle at 80% 70%, rgba(108, 99, 255, 0.4) 0%, transparent 50%),
-            radial-gradient(circle at 40% 80%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
-            radial-gradient(circle at 60% 20%, rgba(255, 20, 147, 0.2) 0%, transparent 50%),
-            radial-gradient(circle at 10% 90%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
-            linear-gradient(135deg, #0D0D0D 0%, #1a0d2e 30%, #2D1B69 50%, #0D0D0D 70%, #000000 100%);
-    }
+    0% { opacity: 0.3; }
+    100% { opacity: 0.8; }
 }
 
 .ambient-bg {
@@ -182,6 +133,20 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1000;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 20px #ff6b6b;
+}
+
+@media (hover: none) and (pointer: coarse) {
+    #dragon-canvas {
+        display: none !important;
+    }
+    
+    .cursor {
+        display: none !important;
+    }
+    
+    body {
+        cursor: default !important;
+    }
 }
 
 .header-clock {

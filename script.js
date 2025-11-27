@@ -135,141 +135,7 @@ function scrollToSection(sectionId) {
 }
 
 function downloadCV() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-    
-    doc.setProperties({
-        title: 'Syed Muzammil Ali - CV',
-        subject: 'Curriculum Vitae',
-        author: 'Syed Muzammil Ali',
-        keywords: 'CV, Resume, Full Stack Developer',
-        creator: 'Syed Muzammil Ali Portfolio'
-    });
-    
-    doc.setFontSize(22);
-    doc.setTextColor(108, 99, 255);
-    doc.text('SYED MUZAMMIL ALI', 20, 30);
-    
-    doc.setFontSize(12);
-    doc.setTextColor(0, 0, 0);
-    doc.text('Full Stack Developer', 20, 40);
-    doc.text('Phone: 03702440472 | Email: syedmuzammilail624@gmail.com', 20, 50);
-    doc.text('GitHub: https://github.com/muzammilail123456', 20, 60);
-    
-    doc.setFontSize(16);
-    doc.setTextColor(108, 99, 255);
-    doc.text('ABOUT ME', 20, 80);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    const aboutText = "Motivated and curious AI driven web developer and digital creator eager to join GNV.AI as a Vibe Coding Intern. Passionate about blending creativity, technology, and AI-assisted workflows to build modern digital solutions. Looking to grow through hands-on collaboration, real world projects, and community innovation.";
-    doc.text(aboutText, 20, 90, { maxWidth: 170 });
-    
-    doc.setFontSize(16);
-    doc.setTextColor(108, 99, 255);
-    doc.text('SKILLS', 20, 130);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    doc.text('• Web Development: HTML5, CSS3, Tailwind CSS, React, Node.js', 20, 140);
-    doc.text('• Programming Languages: Python, JavaScript, C++', 20, 147);
-    doc.text('• Databases: MySQL, SQL (Queries, Data Structuring, Optimization)', 20, 154);
-    doc.text('• Cloud Technologies: Basic knowledge of cloud hosting, deployment, and database integration', 20, 161);
-    doc.text('• AI & Automation: Familiar with AI tools, workflow automation, and prompt based development', 20, 168);
-    doc.text('• CMS & Design: WordPress (Astra Theme Customization), Canva, Adobe Illustrator and Figma', 20, 175);
-    doc.text('• Version Control: Git, GitHub', 20, 182);
-    doc.text('• Productivity Tools: Microsoft Office, Meta Business Suite', 20, 189);
-    
-    doc.setFontSize(16);
-    doc.setTextColor(108, 99, 255);
-    doc.text('CERTIFICATES', 20, 210);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    doc.text('• Web Development - Saylani Mass IT Training', 20, 220);
-    doc.text('• Web Scraping in Python - Udemy (Frank Andrade)', 20, 227);
-    
-    doc.addPage();
-    doc.setFontSize(16);
-    doc.setTextColor(108, 99, 255);
-    doc.text('PROJECTS / EXPERIENCE', 20, 30);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    
-    const projects = [
-        {
-            title: "Freelance Digital Marketer & Web Developer",
-            description: "Developed and customized multiple WordPress websites for clothing brands, coaching institutes, and schools. Managed social media marketing campaigns for schools and clothing brands, improving brand visibility and engagement. Designed prototypes for educational websites using HTML, CSS, and JavaScript. Created marketing strategies, posts, and ad designs for Facebook & Instagram. Worked with clients like Sage School, Dzehra Clothing Brand, and ATS Group (Water Filtration Company). Conducted a WordPress training session for students, teaching website setup, theme customization, and basic development tools."
-        },
-        {
-            title: "Web Scraping Intern - Swiss Tech Company",
-            description: "Scraped multiple e-commerce websites using Python, Scrapy & Selenium. Ensured structured, clean, and accurate datasets for analysis. Collaborated remotely with team members to meet project deadlines."
-        },
-        {
-            title: "School Website Prototype",
-            description: "Designed and developed a functional website prototype for a school using HTML, CSS, and JavaScript, focusing on responsive design and easy navigation."
-        },
-        {
-            title: "Coaching Institute Website and SMM",
-            description: "Built a customized website for a coaching institute to showcase services, courses, and admission details with a modern UI/UX and also managed their social media."
-        },
-        {
-            title: "Sage School",
-            description: "Managed and executed Facebook and Instagram marketing campaigns for Sage School, including content creation, ad design, and audience targeting to boost engagement."
-        },
-        {
-            title: "Dzehra Clothing Brand Website",
-            description: "Developed a e-commerce website using HTML CSS JS REACT TALWAND SQL NODE.JS for Dzehra Clothing Brand and handled social media marketing, increasing brand visibility and customer engagement."
-        },
-        {
-            title: "ATS Group",
-            description: "Worked on brand development (using wordpress) and digital marketing strategies for ATS Group, a water filtration company, including creative content design and awareness campaigns."
-        },
-        {
-            title: "Jarvis AI Virtual Assistant",
-            description: "Developed a personal AI based assistant (Jarvis) using Python that can perform multiple automated tasks such as opening applications, browsing the internet, fetching information, sending emails, and responding to voice commands. The project showcases integration of speech recognition, text-to-speech, and automation libraries, reflecting strong problem-solving and programming skills."
-        },
-        {
-            title: "Automated Web Interaction & Data Extraction System",
-            description: "Selenium, Python, PostgreSQL Automated login, navigation, and form handling on JS-heavy sites using Selenium WebDriver. Extracted structured data with advanced wait strategies and stored in PostgreSQL. Implemented logging for resilient, hands-free scraping workflows."
-        },
-        {
-            title: "End Cloud Data Pipeline (Batch ETL)",
-            description: "Python, AWS S3, Snowflake, Apache Airflow Built a cloud-based ETL pipeline that extracts crypto data from CoinGecko API, transforms it using Python, and stores raw & cleaned data in AWS S3. Automated data ingestion into Snowflake with Apache Airflow on AWS EC2 for scheduling and orchestration. Designed Airflow DAGs ensuring reliable, production-grade data workflows."
-        }
-    ];
-    
-    let yPosition = 40;
-    projects.forEach(project => {
-        doc.setFontSize(11);
-        doc.setTextColor(108, 99, 255);
-        doc.text(project.title, 20, yPosition);
-        
-        doc.setFontSize(9);
-        doc.setTextColor(0, 0, 0);
-        const lines = doc.splitTextToSize(project.description, 170);
-        doc.text(lines, 20, yPosition + 7);
-        
-        yPosition += 7 + (lines.length * 5) + 5;
-        
-        if (yPosition > 270) {
-            doc.addPage();
-            yPosition = 30;
-        }
-    });
-    
-    doc.addPage();
-    doc.setFontSize(16);
-    doc.setTextColor(108, 99, 255);
-    doc.text('EDUCATION', 20, 30);
-    
-    doc.setFontSize(10);
-    doc.setTextColor(0, 0, 0);
-    doc.text('• GBSS mailr Kalaboard - Matriculation computer science (Completed)', 20, 40);
-    doc.text('• Govt S.M College - Intermediate in computer science (In Progress)', 20, 47);
-    
-    doc.save('Syed_Muzammil_Ali_CV.pdf');
+    alert('CV download functionality ready - add your CV file');
 }
 
 function viewProject(projectName) {
@@ -324,6 +190,10 @@ dragonCanvas.height = window.innerHeight;
 
 let mouseX = dragonCanvas.width / 2;
 let mouseY = dragonCanvas.height / 2;
+
+function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
 
 class Dragon {
     constructor() {
@@ -536,25 +406,41 @@ class Dragon {
 
 const dragon = new Dragon();
 
+function updateCursorDisplay() {
+    if (isTouchDevice()) {
+        document.body.style.cursor = 'default';
+        cursor.style.display = 'none';
+        dragonCanvas.style.display = 'none';
+    } else {
+        document.body.style.cursor = 'none';
+        cursor.style.display = 'block';
+        dragonCanvas.style.display = 'block';
+    }
+}
+
 document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursor.style.left = mouseX + 'px';
-    cursor.style.top = mouseY + 'px';
+    if (!isTouchDevice()) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    }
 });
 
 window.addEventListener('resize', () => {
     dragonCanvas.width = window.innerWidth;
     dragonCanvas.height = window.innerHeight;
+    updateCursorDisplay();
 });
 
 function animateDragon() {
-    dragonCtx.clearRect(0, 0, dragonCanvas.width, dragonCanvas.height);
-    
-    dragon.update(mouseX, mouseY);
-    dragon.draw();
-    
+    if (!isTouchDevice()) {
+        dragonCtx.clearRect(0, 0, dragonCanvas.width, dragonCanvas.height);
+        dragon.update(mouseX, mouseY);
+        dragon.draw();
+    }
     requestAnimationFrame(animateDragon);
 }
 
+updateCursorDisplay();
 animateDragon();
