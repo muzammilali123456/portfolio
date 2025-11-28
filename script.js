@@ -138,12 +138,12 @@ function downloadCV() {
     alert('CV download functionality ready - add your CV file');
 }
 
-function viewProject(projectName) {
-    alert(`Project link placeholder for: ${projectName}\nPlease replace with actual project URL.`);
+function viewProject(projectUrl) {
+    window.open(projectUrl, '_blank');
 }
 
-function viewCode() {
-    alert('Code repository link placeholder.\nPlease replace with actual GitHub URL.');
+function viewCode(codeUrl) {
+    window.open(codeUrl, '_blank');
 }
 
 function sendMessage() {
