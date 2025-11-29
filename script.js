@@ -135,7 +135,13 @@ function scrollToSection(sectionId) {
 }
 
 function downloadCV() {
-    alert('D:\my-portfolio\portfolio\cv.pdf');
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = 'syed muzammil ali cv.pdf'; // Path to your PDF file
+    link.download = 'syed muzammil ali_CV.pdf'; // Suggested filename for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 function viewProject(projectUrl) {
