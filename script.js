@@ -135,10 +135,25 @@ function scrollToSection(sectionId) {
 }
 
 function downloadCV() {
-    // Create a temporary anchor element
+    
     const link = document.createElement('a');
-    link.href = 'syed muzammil ali cv.pdf'; // Path to your PDF file
-    link.download = 'syed muzammil ali_CV.pdf'; // Suggested filename for download
+    link.href = 'documents/cv.pdf';
+    link.download = 'My_CV.pdf';
+    
+    
+    link.onerror = function() {
+        console.error('File not found at:', link.href);
+        alert('CV file not found. Please check if the file exists in the documents folder.');
+        
+        
+        window.open('documents/cv.pdf', '_blank');
+    };
+    
+    
+    link.onload = function() {
+        console.log('File found successfully!');
+    };
+    
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
