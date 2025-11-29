@@ -135,7 +135,7 @@ function scrollToSection(sectionId) {
 }
 
 function downloadCV() {
-    alert('CV download functionality ready - add your CV file');
+    alert('D:\my-portfolio\portfolio\cv.pdf');
 }
 
 function viewProject(projectUrl) {
